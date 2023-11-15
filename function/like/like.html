@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>좋아요 기능 구현</title>
+    <!-- css 파일 연결 -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <!-- getElimentId 를 이용한 좋아요 기능 구현 (id 선택자만 사용 가능) -->
+    <div id="container1">
+        <div id="likeButton1" onclick="onClickEventHandler()">Click</div>
+        <div id="likeCount1">0</div>
+    </div>
+
+    <!-- querySelector 를 이용한 좋아요 기능 구현 (id, class 선택자 모두 사용 가능) -->
+    <div id="container2">
+        <div id="likeButton2">Click</div>
+        <div id="likeCount2">0</div>
+    </div>
+
+    <!-- innerHTML 과 innerText 의 차이를 이용한 좋아요 기능 구현 -->
+    <!-- innerHTML 은 HTML 요소를 변경할 수 있고, innerText 는 문자(Text)만을 변경시킴 -->
+    <div id="container3">
+        <div id="likeButton3">Click</div>
+        <div id="likeCount3">0</div>
+    </div>
+    
+    <!-- javaScript 파일 연결 -->
+    <script src="./script.js"></script>
+
+</body>
+</html>

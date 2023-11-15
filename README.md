@@ -89,5 +89,33 @@ forEach/map/filter/reduce/etc... O(n)
 * 데이터 세트를 더 작은 청크로 나눈 다음 데이터 하위 세트로 프로세스를 반복하는 작업이 포함됨
 * 시간 복잡성을 엄청나게 줄일 수 있음
 
+# 4일차
+## 재귀(Recursion)
+### 정의
+* 자기자신을 호출하는 절차
+* 즉, 자기자신을 호출하는 함수를 의미
+```
+function countDown(num) {
+    if(num <= 0) {
+        console.log("All done!");
+        return;
+    }
+    console.log(num);
+    num--;
+    countDown1(num);
+};
+countDown(5); // 5 4 3 2 1 All done!
+```
+### 스택 호출하기
+* 호출 스택은 자바스크립트의 보이지 않는 곳에서 작동하는 정적 데이터 구조(Static Data Structure)
+* 항목이 꼭대기에 추가되고 마찬가지로 꼭대기에서부터 제거되며, 함수가 추가되면 이 구조에 추가
+### 통상적인 재귀의 잠재적 위험
+* 호출 스택의 최대 크기가 존재(최대 스택 크기 초과) 이를 stack Overflow 라고 부름
+### 헬퍼 메소드 재귀 설계 패턴
+* 재귀적이지 않은 외부 함수(outer function)가 재귀적인 내부 함수(inner function)를 호출하는 패턴
+### 순수 재귀
+* 배열의 경우 slice, spread 연산자, concat, substr, substring 과 같은 메소드를 사용하면 유용
+* 객체의 경우 assign, spread 연산자를 사용하면 유용
+
 
 
