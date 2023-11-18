@@ -1,0 +1,72 @@
+#inputContainer{
+    display: flex;
+    align-items: center;
+}
+
+.inputBox{
+    height: 30px;
+    box-sizing: border-box;
+}
+
+.searchButton{
+    margin-left: 5px;
+    width: 50px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 30px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.searchButton:hover{
+    background-color: lightgray;
+    color: black;
+}
+
+#pokemonContents{
+    width: 800px;
+}
+
+.pokemonContainer{
+    display: flex;
+}
+
+.pokemonContainer>div{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.pokemonText{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.test{
+    width: 500;
+    display: flex;
+    justify-content: space-between;
+    background-color: aquamarine;
+}
+
+.test1{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+
+.test2{
+    width: 100px;
+    height: 100px;
+    background-color: green;
+}
+
+.test3{
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+}
