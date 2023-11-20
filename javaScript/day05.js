@@ -11,7 +11,7 @@ function linearSearch1(arr, val) {
 
 console.log(linearSearch1([34, 56, 1, 2], 1));
 
-// JavaScript 의 indexOf() 배열 메소드로 구현
+// JavaScript 의 indexOf() 메소드로 구현
 function linearSearch2(arr, val) {
     let check = arr.indexOf(val);
     if(check === -1) return -1;

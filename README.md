@@ -57,7 +57,7 @@ concat : O(n)
 slice : O(n)
 splice : O(n)
 sort : O(n * log n)
-forEach/map/filter/reduce/etc... O(n)
+forEach / map / filter / reduce /etc... O(n)
 ```
 ### 객체와 배열의 빅오 정리
 * 객체는 거의 모든것을 더 빠르게 하지만, 정렬되어 있지 않고
@@ -132,4 +132,76 @@ countDown(5); // 5 4 3 2 1 All done!
 4) 배열의 중간에 해당하는 값이 검색하는 값 보다 작을 경우, 시작 포인트를 중간 + 1 로 변경
 5) 변경된 시작이나 끝 포인트 값을 기준으로 중간 포인트 값 재설정
 6) 루프를 빠져나와 최종적으로 반환해줄 결과값 설정 후 함수 실행
+```
+## 나이브 문자열 검색
+* 긴 문자열에서 부분 문자열(substring)을 검색하는 것과 관련 
+# 6일차
+## 버블 정렬
+### 정렬 알고리즘
+* 컬렉션(collection / ex. 배열)의 항목을 재배열하는 과정
+### 기본 내장 자바스크립트 정렬
+* 내장된 JavaScript 정렬 메소드는 선택적 비교기능을 허용
+* 이 비교 기능을 사용하여 JavaScript 정렬 방법을 알려줄 수 있음
+* 요소의 쌍(a 및 b)을 보고 반환 값에 따라 정렬 순서를 결정
+* 1) 음수를 반환하는 경우 a 가 b 앞에 와야 함
+* 2) 양수를 반화하는 경우 a 는 b 뒤에 와야 함
+* 3) 0을 반환하면 정렬에 관한 한 a 와 b 는 동일함
+```
+// 오름차순 정렬
+function numberCompare1(num1, num2) {
+  return num1 - num2;
+}
+
+[ 6, 4, 15, 10 ].sort(numberCompare1);
+// [ 4, 6, 10, 15 ]
+
+// 내림차순 정렬
+function numberCompare(num1, num2) {
+  return num2 - num1;
+}
+
+[ 6, 4, 15, 10 ].sort(numberCompare);
+// [ 15, 10, 6, 4 ]
+
+// 문자열은 .length 를 이용하여 이와 동일하게 함수 작성 후 적용
+```
+### 버블 정렬 : 개요
+* 배열을 가장 작은 숫자에서 가장 큰 숫자순으로 오름차순 정렬을 한다면 더 큰 숫자가 한 번에 하나씩 뒤로 이동한다는 것
+### 버블 정렬 : 구현
+```
+function bubbleSort(arr) {
+    for(let i = arr.length; i > 0; i--) {
+        for(let j = 0; j < arr.length; j++) {
+            if(arr[j] > arr[j+1]) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    return arr;
+}
+
+bubbleSort([37, 45, 29, 8]);
+```
+### 버블 정렬 : 최적화
+```
+function bubbleSort(arr) {
+    let noSwap;
+    for(let i = arr.length; i > 0; i--) {
+        noSwap = true;
+        for(let j = 0; j < arr.length; j++) {
+            if(arr[j] > arr[j+1]) {
+                let temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+                noSwap = false;
+            }
+        }
+        if(noSwap) break;
+    }
+    return arr;
+}
+
+bubbleSort([37, 45, 29, 8]);
 ```

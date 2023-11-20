@@ -78,7 +78,7 @@ console.log(same2([1, 2, 3, 2],[9, 1, 4, 4]));
 // validAnagram('texttwisttime', 'timetwisttext') // true
 function validAnagram(str1, str2){
     // str1 과 str2 의 배열의 길이가 같지 않을 경우 false 반환
-    if(str1.length !== str2.lenght) return false;
+    if(str1.length !== str2.length) return false;
     // Loop 사용
     for(let i = 0; i < str1.lenght; i++) {
         // correctIndex 에 str 배열의 값들 중 str1[i] 에 해당하는 값이 있다면 그 인덱스 번호를 할당
@@ -91,6 +91,7 @@ function validAnagram(str1, str2){
     // true 반환
     return true;
 };
+console.log(validAnagram('', ''));
 validAnagram('', '');
 validAnagram('aaz', 'zza');
 
